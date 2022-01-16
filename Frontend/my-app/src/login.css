@@ -1,0 +1,19 @@
+.button1,.button2{
+    text-decoration: none;
+    border: 1px solid gray;
+    height: 35px;
+    width:22rem ;
+    background-color: greenyellow;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.button2{
+    background-color: #1877f2;
+}
