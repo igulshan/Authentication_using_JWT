@@ -8,6 +8,7 @@ const Userpost =require("./model/postSchema");
 const User = require("./model/userSchema");
 
 
+
 app.post('/delete/:id',async(req,res)=>{
     console.log(req.params);
     try{
