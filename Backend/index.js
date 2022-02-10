@@ -9,30 +9,46 @@ const User = require("./model/userSchema");
 
 
 
-app.post('/delete/:id',async(req,res)=>{
-    console.log(req.params);
+app.get('/gallary', async(req, res)=>{
     try{
-        const post = await Userpost.findById(req.params.id);
-        if(!post){
-            return res.json({
-                status:"failed",
-                message:"post doesn't exist"
-            })
-        }
-        await Userpost.deleteOne({_id:req.params.id});
-        res.json({
-            status:"success",
-            message:"post deleted",
-            data:post
-        })
+        const data= await Userpost.find();
+        // console.log(data);
+        res.json(data);
     }catch(e){
-        console.log(e);
         res.json({
-            status:"failed",
+            status:failed,
             message:e.message
         })
-    }  
+    }
 })
+
+
+
+
+// app.post('/delete/:id',async(req,res)=>{
+//     console.log(req.params);
+//     try{
+//         const post = await Userpost.findById(req.params.id);
+//         if(!post){
+//             return res.json({
+//                 status:"failed",
+//                 message:"post doesn't exist"
+//             })
+//         }
+//         await Userpost.deleteOne({_id:req.params.id});
+//         res.json({
+//             status:"success",
+//             message:"post deleted",
+//             data:post
+//         })
+//     }catch(e){
+//         console.log(e);
+//         res.json({
+//             status:"failed",
+//             message:e.message
+//         })
+//     }  
+// })
 
 // app.post('/register',async(req,res)=>{
 //     console.log(req.body);
@@ -67,18 +83,7 @@ app.post('/delete/:id',async(req,res)=>{
 
 
 
-// app.get('/gallary', async(req, res)=>{
-//     try{
-//         const data= await Userpost.find();
-//         // console.log(data);
-//         res.json(data);
-//     }catch(e){
-//         res.json({
-//             status:failed,
-//             message:e.message
-//         })
-//     }
-// })
+
 
 // app.post("/",async (req, res)=>{
 //     try{
